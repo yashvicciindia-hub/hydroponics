@@ -1,10 +1,11 @@
 import { FormEvent, useEffect, useState } from 'react';
 import {
   ArrowRight, BarChart3, BadgeCheck, BrainCircuit, Building2, Check,
-  CircleDollarSign, Droplets, Factory, Globe2, Handshake, Leaf,
-  Menu, Network, PackageCheck, Search, ShieldCheck, Sprout, Tractor,
+  CircleDollarSign, Droplets, Factory, Handshake, Leaf,
+  Menu, Network, PackageCheck, ShieldCheck, Sprout, Tractor,
   Truck, Users, X, Zap, Mail, MapPin, Phone
 } from 'lucide-react';
+import HydroponicsIndiaChatbot from './components/chatbot/HydroponicsIndiaChatbot';
 
 const logoImage = '/images/hydroponics_india.jpeg';
 const heroImage = '/images/CS-Greens-For-You-S1000-08-scaled-e1638976365885.jpg';
@@ -84,7 +85,7 @@ function App() {
   }, [path]);
   const go = (href: string) => { window.history.pushState({}, '', href); setPath(href); setMenuOpen(false); window.scrollTo(0, 0); };
   const page = path === '/' ? <Home go={go} /> : path === '/join' ? <Join openForm={setJoinType} /> : path === '/contact' || path === '/contacts' ? <ContactPage /> : <ContentPage path={path} go={go} />;
-  return <><header className="nav"><div className="nav-inner"><button className="brand" onClick={() => go('/')}><img className="logo-image logo-header" src={logoImage} alt="Hydroponics India" /></button><nav className={menuOpen ? 'nav-links open' : 'nav-links'}>{navItems.map(([label, href]) => <button key={href} className={path === href ? 'active' : ''} onClick={() => go(href)}>{label}</button>)}<button className="nav-join" onClick={() => go('/join')}>Join the ecosystem <ArrowRight size={15} /></button></nav><button className="menu-button" aria-label="Open navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button></div></header><main>{page}</main><Footer go={go} />{joinType && <RegistrationModal type={joinType} data={formData} setData={setFormData} review={review} setReview={setReview} close={() => { setJoinType(null); setReview(false); setFormData({}); }} />}</>;
+  return <><header className="nav"><div className="nav-inner"><button className="brand" onClick={() => go('/')}><img className="logo-image logo-header" src={logoImage} alt="Hydroponics India" /></button><nav className={menuOpen ? 'nav-links open' : 'nav-links'}>{navItems.map(([label, href]) => <button key={href} className={path === href ? 'active' : ''} onClick={() => go(href)}>{label}</button>)}<button className="nav-join" onClick={() => go('/join')}>Join the ecosystem <ArrowRight size={15} /></button></nav><button className="menu-button" aria-label="Open navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button></div></header><main>{page}</main><Footer go={go} /><HydroponicsIndiaChatbot />{joinType && <RegistrationModal type={joinType} data={formData} setData={setFormData} review={review} setReview={setReview} close={() => { setJoinType(null); setReview(false); setFormData({}); }} />}</>;
 }
 
 function Home({ go }: { go: (href: string) => void }) { return <>

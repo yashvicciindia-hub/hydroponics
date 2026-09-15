@@ -1,0 +1,33 @@
+export type ChatIntent =
+  | 'greeting' | 'thanks' | 'identity' | 'whatIs' | 'hydroponics' | 'ecosystem'
+  | 'farmer' | 'training' | 'technician' | 'equipment' | 'support' | 'ai'
+  | 'finance' | 'market' | 'business' | 'funding' | 'roadmap' | 'contact' | 'unknown';
+
+export const welcomeMessage = `Hi! I'm the HydroponicsIndia Assistant 🌱
+
+I can help you explore hydroponic farming, technology, training, infrastructure, finance, technical support, market access, and the HydroponicsIndia ecosystem.
+
+What would you like to know?`;
+
+export const knowledge = {
+  whatIs: `HydroponicsIndia is positioned as an integrated ecosystem for scaling hydroponics in India. It is designed to connect farmers, equipment providers, finance, training, technical services, logistics, research and buyers through one coordinated platform. Its core vision is to enable a resilient, water-efficient, high-value produce economy nationwide.`,
+  hydroponics: `Hydroponics is a method of growing plants without soil by delivering water and nutrients to the plant roots in a controlled system. It can support resource-efficient, high-value farming, but actual outcomes depend on the crop, system, location, infrastructure, operating costs and market conditions.`,
+  ecosystem: `The platform acts as a transaction, standards and coordination layer. Its ecosystem is designed to bring together farmers, equipment makers, suppliers, technology partners, banks and insurance, entrepreneurs, universities, research institutions, technicians, logistics providers and buyers.`,
+  farmer: `For farmers, the journey is designed to run from feasibility and crop selection through skill development, infrastructure setup, technical support, AI guidance, business planning, market access and growth. Setup cost is not universal: it varies with system type, scale, crop, automation, infrastructure and location.`,
+  training: `The proposed Hydro Skill Mission covers crop protocols, quality control, maintenance, business management, market linkage, cluster economics, installation and troubleshooting. Pathways include farmer training, technician certification, entrepreneur development and professional certification. The deck describes accredited credentials and practical exams; I cannot claim a certification has been issued here.`,
+  equipment: `The planned equipment ecosystem covers hydroponic systems, greenhouses, sensors, automation, seeds, nutrients, inputs, certified installation and quality assurance. The roadmap also describes pre-engineered modules, standard sensor stacks, automation kits, verified inputs, rental and lease-to-own options. I do not have verified supplier names, prices or live inventory.`,
+  support: `The ecosystem envisions certified technicians, installation support, troubleshooting, remote monitoring and service contracts. This website chatbot cannot confirm that a technician is currently available or inspect a farm.`,
+  ai: `The proposed AI advisory layer is designed to combine sensor data, image diagnostics and market signals for crop recommendations, nutrient management, image-based alerts, yield optimization, demand forecasting, profitability insights and multilingual guidance. I do not have access to your live farm, sensors, crop images or real-time market data through this chatbot.`,
+  finance: `HydroponicsIndia's ecosystem is designed to connect equipment and farming needs with financing and risk-mitigation options, including banks, insurance, equipment finance, rental and lease-to-own models. Specific financing availability, eligibility, rates and approval depend on the relevant financial institution.`,
+  market: `The platform aims to improve market access through buyer matchmaking, demand aggregation, quality certification, procurement coordination, route-to-market partnerships, traceability and export readiness. Potential channels include hotels, retailers, processors, urban markets and exports; I cannot invent or confirm a buyer here.`,
+  business: `The platform is designed to support project templates, cashflow models, growth scenarios, per-cycle margin insights, input cost tracking, break-even timelines, cluster models, contract-farming planning and export readiness. These are planning concepts, not personalized financial projections or guaranteed returns.`,
+  funding: `According to the pitch deck, the proposed $1M deployment allocation is: Technology Platform & AI 22%, Centers of Excellence 20%, Marketplace Development 12%, Startup Incubation Fund 12%, Strategic Partnerships 10%, Core Team & Operations 10%, and Training & Certification 8%. This is pitch-deck information, not a statement of current funding or spending.`,
+  roadmap: `The roadmap envisions national ecosystem development across technology, marketplace, training, certification, strategic partnerships, Centers of Excellence and startup incubation. Features should be understood as proposed unless the current website explicitly confirms they are live.`,
+};
+
+export const intentKeywords: Record<ChatIntent, string[]> = {
+  greeting: ['hi', 'hello', 'hey', 'namaste', 'good morning', 'good evening'], thanks: ['thanks', 'thank you', 'thx', 'shukriya'], identity: ['who are you', 'what can you do', 'assistant'],
+  whatIs: ['what is hydroponicsindia', 'hydroponics india kya', 'hydroponicsindia kya'], hydroponics: ['what is hydroponic', 'hydroponic kya', 'hydroponics kya', 'soil', 'water farming'], ecosystem: ['ecosystem', 'platform', 'stakeholder', 'partners', 'connect'],
+  farmer: ['farmer', "i'm a farmer", 'i am a farmer', 'start farming', 'start a farm', 'how do i start'], training: ['training', 'learn', 'hydro skill', 'skill mission', 'academy', 'course'], technician: ['technician', 'certification', 'certfication', 'tecnician'], equipment: ['equipment', 'greenhouse', 'green house', 'sensor', 'automation', 'seed', 'nutrient', 'rental', 'lease'], support: ['technical support', 'troubleshoot', 'installation', 'remote monitoring'],
+  ai: ['ai', 'artificial intelligence', 'crop recommendation', 'nutrient managment', 'disease', 'diagnos', 'image', 'yield optimization'], finance: ['finance', 'finace', 'loan', 'funding', 'investment', 'bank', 'insurance', 'cost', 'investment lage'], market: ['market', 'buyer', 'market acces', 'market access', 'procurement', 'logistics', 'cold chain', 'export'], business: ['profit', 'profitability', 'cashflow', 'business plan', 'break even', 'revenue'], funding: ['how much funding', 'use of funds', 'deployment', '1m', '$1m'], roadmap: ['roadmap', 'nationwide', 'national scale', 'available now'], contact: ['contact', 'phone', 'email', 'address'], unknown: [],
+};
