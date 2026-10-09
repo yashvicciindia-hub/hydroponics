@@ -1,0 +1,157 @@
+.hydroponics-app-download-wrapper {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 49;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.hydroponics-app-download {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  background: var(--green, #1b5c3b);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Manrope, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 10px 26px rgba(15, 61, 35, 0.28), 0 0 0 1px rgba(168, 224, 99, 0.35);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hydroponics-app-download:hover {
+  background: var(--deep, #0f3d23);
+  box-shadow: 0 14px 34px rgba(15, 61, 35, 0.4), 0 0 0 2px var(--lime, #a8e063);
+  transform: translateY(-2px);
+}
+
+.hydroponics-app-download:focus-visible {
+  outline: 2px solid var(--lime, #a8e063);
+  outline-offset: 3px;
+  background: var(--deep, #0f3d23);
+  box-shadow: 0 14px 34px rgba(15, 61, 35, 0.4), 0 0 0 2px var(--lime, #a8e063);
+}
+
+.had-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--lime, #a8e063);
+}
+
+.had-android-dot {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime, #a8e063);
+  box-shadow: 0 0 0 2px var(--green, #1b5c3b);
+  animation: had-pulse 2.5s infinite;
+}
+
+.had-label-compact {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--lime, #a8e063);
+  transition: opacity 0.2s ease;
+}
+
+.had-label-full {
+  display: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* Hover expansion on Desktop */
+@media (min-width: 561px) {
+  .hydroponics-app-download:hover .had-label-compact,
+  .hydroponics-app-download:focus-visible .had-label-compact {
+    display: none;
+  }
+
+  .hydroponics-app-download:hover .had-label-full,
+  .hydroponics-app-download:focus-visible .had-label-full {
+    display: inline-block;
+  }
+}
+
+.had-download-icon {
+  flex-shrink: 0;
+  color: var(--lime, #a8e063);
+  transition: transform 0.25s ease;
+}
+
+.hydroponics-app-download:hover .had-download-icon,
+.hydroponics-app-download:focus-visible .had-download-icon {
+  transform: translateY(2px);
+}
+
+@keyframes had-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hydroponics-app-download,
+  .had-download-icon,
+  .had-android-dot {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Mobile Responsiveness (< 560px) */
+@media (max-width: 560px) {
+  .hydroponics-app-download-wrapper {
+    right: 18px;
+    bottom: 84px;
+    max-width: calc(100vw - 36px);
+  }
+
+  .hydroponics-app-download {
+    height: 46px;
+    padding: 0 14px;
+    font-size: 13px;
+    box-shadow: 0 8px 22px rgba(15, 61, 35, 0.35), 0 0 0 1px rgba(168, 224, 99, 0.4);
+  }
+
+  .had-label-compact {
+    display: none;
+  }
+
+  .had-label-full {
+    display: inline-block;
+    font-size: 13px;
+  }
+}
